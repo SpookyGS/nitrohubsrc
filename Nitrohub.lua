@@ -21,7 +21,7 @@ esp:Toggle(true)
 -- Configure ESP settings
 esp.Boxes = true
 esp.Names = true
-esp.Tracers = true
+esp.Tracers = false
 esp.Players = false
  
 -- Add an object listener to the workspace to detect enemy models
@@ -50,7 +50,7 @@ esp:AddObjectListener(workspace, {
    end,
  
    -- Set a custom name to use for the enemy models
-   CustomName = "?",
+   CustomName = "Enemy",
  
    -- Enable the ESP for enemy models
    IsEnabled = "enemy"
