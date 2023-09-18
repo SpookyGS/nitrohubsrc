@@ -15,7 +15,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
  
 -- Load the ESP library and turn it on
-local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/blob/main/esp.lua"))()
+local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/esp.lua"))()
 esp:Toggle(true)
  
 -- Configure ESP settings
