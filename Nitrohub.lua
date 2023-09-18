@@ -20,9 +20,9 @@ esp:Toggle(true)
  
 -- Configure ESP settings
 esp.Boxes = true
-esp.Names = false
-esp.Tracers = false
-esp.Players = true
+esp.Names = true
+esp.Tracers = true
+esp.Players = false
  
 -- Add an object listener to the workspace to detect enemy models
 esp:AddObjectListener(workspace, {
