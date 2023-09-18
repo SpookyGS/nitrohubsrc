@@ -20,7 +20,7 @@ esp:Toggle(true)
  
 -- Configure ESP settings
 esp.Boxes = true
-esp.Names = false
+esp.Names = true
 esp.Tracers = false
 esp.Players = false
  
