@@ -2,9 +2,17 @@
 local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/ui.lua"))()
 local ui = UI.new("NitroHub - Frontlines", 5013109572)
 
+-- Send a notification saying that the script is loading
+game.StarterGui:SetCore("SendNotification", {
+   Title = "NitroHub",
+   Text = "Loading your script",
+   Icon = "rbxassetid://14818607950",
+   Duration = 5
+})
+
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24),
-	Glow = Color3.fromRGB(0, 0, 0),
+	Glow = Color3.fromRGB(0, 255, 255),
 	Accent = Color3.fromRGB(10, 10, 10),
 	LightContrast = Color3.fromRGB(20, 20, 20),
 	DarkContrast = Color3.fromRGB(14, 14, 14),  
@@ -81,7 +89,6 @@ esp:AddObjectListener(workspace, {
         if obj:FindFirstChild("friendly_marker") then
             return false
         end
-
         return true 
     end,
 
@@ -101,33 +108,33 @@ local size = Vector3.new(10, 10, 10)
 local trans = 1
 local notifications = true -- default value
 
--- function to handle when a new enemy model is added to the workspace
+-- Function to handle when a new descendant is added to the workspace
 local function handleDescendantAdded(descendant)
-    task.wait(1)
-
-    -- If the new descendant is an enemy model and notifications are enabled, send a notification
-    if descendant.Name == "soldier_model" and descendant:IsA("Model") and not descendant:FindFirstChild("friendly_marker") then
-        if notifications then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "NitroHub",
-                Text = "New Enemy Spawned. Applied hitboxes.",
-                Icon = "rbxassetid://14818607950",
-                Duration = 3
-            })
-        end
-
-        -- Apply hitboxes to the new enemy model
-        local pos = descendant:FindFirstChild("HumanoidRootPart").Position
-        for _, bp in pairs(workspace:GetChildren()) do
-            if bp:IsA("BasePart") then
-                local distance = (bp.Position - pos).Magnitude
-                if distance <= 5 then
-                    bp.Transparency = trans
-                    bp.Size = size
-                end
-            end
-        end
-    end
+   task.wait(1)
+ 
+   -- If the new descendant is an enemy model and notifications are enabled, send a notification
+   if descendant.Name == "soldier_model" and descendant:IsA("Model") and not descendant:FindFirstChild("friendly_marker") then
+       if notifications then
+           game.StarterGui:SetCore("SendNotification", {
+               Title = "NitroHub",
+               Text = "New Enemy Spawned. Applied hitboxes.",
+               Icon = "rbxassetid://14818607950",
+               Duration = 3
+           })
+       end
+ 
+       -- Apply hitboxes to the new enemy model
+       local pos = descendant:FindFirstChild("HumanoidRootPart").Position
+       for _, bp in pairs(workspace:GetChildren()) do
+           if bp:IsA("BasePart") then
+               local distance = (bp.Position - pos).Magnitude
+               if distance <= 5 then
+                   bp.Transparency = trans
+                   bp.Size = size
+               end
+           end
+       end
+   end
 end
 
 local connectionthing 
