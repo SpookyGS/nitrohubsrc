@@ -249,10 +249,6 @@ playermods:addSlider("JumpPower", 50, 0, 250, function(value)
 end)
 ]]
 
--- load
-ui:SelectPage(ui.pages[1], true)
-ui:Notify("NitroHub succesfully loaded!")
-
 -- Calculate how long the code took to run and determine a rating for the loading speed
 local time = finish - start
 local rating
@@ -280,3 +276,6 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://14818607950",
     Duration = 5
 })
+-- load
+ui:SelectPage(ui.pages[1], true)
+ui:Notify("NitroHub succesfully loaded!")
