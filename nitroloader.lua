@@ -1,6 +1,6 @@
 -- initialization
-local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/andrewc0de/Roblox/main/Dependencies/venyx.lua"))()
-local ui = UI.new("Frontlines - andrewcode", 5013109572)
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/ui.lua"))()
+local ui = UI.new("NitroHub - Frontlines", 5013109572)
 
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24),
