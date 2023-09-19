@@ -1,5 +1,5 @@
 -- initialization
-local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/ui.lua"))()
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/Nitrohub/main/depends/ui.lua"))()
 local ui = UI.new("NitroHub - Frontlines", 5013109572)
 
 -- Send a notification saying that the script is loading
@@ -24,7 +24,7 @@ local tab = ui:addPage("Main", 5012544693)
 local ESPSection = tab:addSection("ESP Settings")
 
 -- load external ESP script
-local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/esp.lua"))()
+local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/Nitrohub/main/depends/esp.lua"))()
 
 -- set default ESP settings
 esp:Toggle(true)
