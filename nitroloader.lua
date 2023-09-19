@@ -85,7 +85,7 @@ esp:AddObjectListener(workspace, {
         return true 
     end,
 
-    CustomName = "🤤", -- set a custom name to use for the enemy models
+    CustomName = "Enemy", -- set a custom name to use for the enemy models
     IsEnabled = "enemy" -- enable the ESP for enemy models
 })
 
@@ -109,9 +109,9 @@ local function handleDescendantAdded(descendant)
     if descendant.Name == "soldier_model" and descendant:IsA("Model") and not descendant:FindFirstChild("friendly_marker") then
         if notifications then
             game.StarterGui:SetCore("SendNotification", {
-                Title = "Script",
-                Text = "[Warning] New Enemy Spawned! Applied hitboxes.",
-                Icon = "",
+                Title = "NitroHub",
+                Text = "New Enemy Spawned. Applied hitboxes.",
+                Icon = "rbxassetid://14818607950",
                 Duration = 3
             })
         end
@@ -209,8 +209,8 @@ othersettings:addKeybind("Toggle Keybind", Enum.KeyCode.End, function()
 	ui:toggle()
 end)
 
-othersettings:addButton("Copy Discord link", function()
-    setclipboard('https://discord.gg/4gdBU887Te')
+othersettings:addButton("Copy Discord", function()
+    setclipboard('https://discord.gg/UAhvsUvNMn')
 end)
 
 local colors = theme:addSection("Colors")
@@ -251,4 +251,32 @@ end)
 
 -- load
 ui:SelectPage(ui.pages[1], true)
-ui:Notify("This shit made by andrewcode!", "Join my Discord in the settings page !!!")
+ui:Notify("NitroHub succesfully loaded!")
+
+-- Calculate how long the code took to run and determine a rating for the loading speed
+local time = finish - start
+local rating
+if time < 3 then
+   rating = "fast"
+elseif time < 5 then
+   rating = "acceptable"
+else
+   rating = "slow"
+end
+ 
+-- Send a notification showing how long the code took to run and its rating
+game.StarterGui:SetCore("SendNotification", {
+   Title = "NitroHub",
+   Text = string.format("Script loaded in %.2f seconds (loaded %s)", time, rating),
+   Icon = "rbxassetid://14818607950",
+   Duration = 5
+})
+
+setclipboard('https://discord.gg/UAhvsUvNMn')
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "NitroHub",
+    Text = "Our discord server has been copied",
+    Icon = "rbxassetid://14818607950",
+    Duration = 5
+})
