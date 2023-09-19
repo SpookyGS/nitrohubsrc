@@ -16,7 +16,7 @@ local tab = ui:addPage("Main", 5012544693)
 local ESPSection = tab:addSection("ESP Settings")
 
 -- load external ESP script
-local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/andrewc0de/Roblox/main/Dependencies/ESP.lua"))()
+local esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpookyGS/nitrohub/main/esp.lua"))()
 
 -- set default ESP settings
 esp:Toggle(true)
